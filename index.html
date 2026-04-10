@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkinson's Disease Topics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Parkinson's Disease Topics</h1>
+    </header>
+    <main>
+        <div class="card-grid">
+            <div class="card" onclick="openModal('topic1')">
+                <h2>Topic 1</h2>
+                <p>Description for topic 1.</p>
+            </div>
+            <div class="card" onclick="openModal('topic2')">
+                <h2>Topic 2</h2>
+                <p>Description for topic 2.</p>
+            </div>
+            <div class="card" onclick="openModal('topic3')">
+                <h2>Topic 3</h2>
+                <p>Description for topic 3.</p>
+            </div>
+            <div class="card" onclick="openModal('topic4')">
+                <h2>Topic 4</h2>
+                <p>Description for topic 4.</p>
+            </div>
+        </div>
+    </main>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+    <script>
+        function openModal(topic) {
+            const titles = {'topic1': 'Topic 1 Detail', 'topic2': 'Topic 2 Detail', 'topic3': 'Topic 3 Detail', 'topic4': 'Topic 4 Detail'};
+            const descriptions = {'topic1': 'Detailed information about topic 1.', 'topic2': 'Detailed information about topic 2.', 'topic3': 'Detailed information about topic 3.', 'topic4': 'Detailed information about topic 4.'};
+            document.getElementById('modal-title').innerText = titles[topic];
+            document.getElementById('modal-description').innerText = descriptions[topic];
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
